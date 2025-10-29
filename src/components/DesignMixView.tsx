@@ -39,9 +39,9 @@ export default function DesignMixView({ baseColors, design }: Props) {
     for (const c of design.colors) { initial[c.id] = 600; }
     return initial;
   });
-  const [included, setIncluded] = useState<Record<string, boolean>>(() => {
+  const [done, setDone] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
-    for (const c of design.colors) { initial[c.id] = true; }
+    for (const c of design.colors) { initial[c.id] = false; }
     return initial;
   });
 
@@ -51,12 +51,12 @@ export default function DesignMixView({ baseColors, design }: Props) {
       `targets:${design.id}`,
       targets
     );
-    const loadedIncluded = loadJSON<Record<string, boolean>>(
-      `included:${design.id}`,
-      included
+    const loadedDone = loadJSON<Record<string, boolean>>(
+      `done:${design.id}`,
+      done
     );
     setTargets(loadedTargets);
-    setIncluded(loadedIncluded);
+    setDone(loadedDone);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [design.id]);
 
@@ -65,32 +65,25 @@ export default function DesignMixView({ baseColors, design }: Props) {
     saveJSON(`targets:${design.id}`, targets);
   }, [design.id, targets]);
   useEffect(() => {
-    saveJSON(`included:${design.id}`, included);
-  }, [design.id, included]);
+    saveJSON(`done:${design.id}`, done);
+  }, [design.id, done]);
 
   const overallGrams = useMemo(() => {
-    const includedGrams = design.colors
-      .filter((c: DesignColor) => included[c.id])
-      .map((c: DesignColor) => targets[c.id] ?? 0);
-    if (includedGrams.length === 0) return 600;
-    const avg = includedGrams.reduce((a: number, b: number) => a + b, 0) / includedGrams.length;
+    const allGrams = design.colors.map((c: DesignColor) => targets[c.id] ?? 0);
+    if (allGrams.length === 0) return 600;
+    const avg = allGrams.reduce((a: number, b: number) => a + b, 0) / allGrams.length;
     return Math.round(avg);
-  }, [design.colors, targets, included]);
+  }, [design.colors, targets]);
 
   const handleOverallGramsChange = (grams: number) => {
     const newTargets = { ...targets };
     design.colors.forEach((c: DesignColor) => {
-      if (included[c.id]) {
-        newTargets[c.id] = grams;
-      }
+      newTargets[c.id] = grams;
     });
     setTargets(newTargets);
   };
 
-  const visibleColors = design.colors.filter((c: DesignColor) => {
-    const grams = included[c.id] ? targets[c.id] ?? 0 : 0;
-    return grams > 0;
-  });
+  const visibleColors = design.colors;
 
   return (
     <main className="mx-auto max-w-3xl p-6 pb-8">
@@ -104,7 +97,7 @@ export default function DesignMixView({ baseColors, design }: Props) {
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-1">{design.name}</h1>
             <p className="text-sm text-gray-600">
-              {design.colors.length} total colors • {visibleColors.length} active
+              {design.colors.length} total colors • {Object.values(done).filter(Boolean).length} completed
             </p>
           </div>
         </div>
@@ -137,9 +130,9 @@ export default function DesignMixView({ baseColors, design }: Props) {
             color={c}
             baseColors={baseColors}
             grams={targets[c.id] ?? 0}
-            included={included[c.id] ?? false}
+            done={done[c.id] ?? false}
             onChangeGrams={(g) => setTargets((t) => ({ ...t, [c.id]: g }))}
-            onToggleIncluded={(v) => setIncluded((t) => ({ ...t, [c.id]: v }))}
+            onToggleDone={(v) => setDone((t) => ({ ...t, [c.id]: v }))}
           />
         ))}
       </div>

@@ -20,15 +20,15 @@ type Props = {
   color: DesignColor;
   baseColors: BaseColor[];
   grams: number;
-  included: boolean;
+  done: boolean;
   onChangeGrams: (grams: number) => void;
-  onToggleIncluded: (included: boolean) => void;
+  onToggleDone: (done: boolean) => void;
 };
 
-export default function ColorCard({ color, baseColors, grams, included, onChangeGrams, onToggleIncluded }: Props) {
+export default function ColorCard({ color, baseColors, grams, done, onChangeGrams, onToggleDone }: Props) {
   const baseIds = baseColors.map((b) => b.id);
   const ratios = parseFormula(color.formula, baseIds);
-  const breakdown = computeBreakdown(included ? grams : 0, ratios);
+  const breakdown = computeBreakdown(grams, ratios);
 
   const nonZeroBaseColors = baseColors.filter((b) => (breakdown[b.id] ?? 0) > 0);
 
@@ -38,30 +38,41 @@ export default function ColorCard({ color, baseColors, grams, included, onChange
   };
 
   return (
-    <Card className={`border-gray-200 ${included ? 'bg-white' : 'bg-gray-50'} transition-colors`}>
+    <Card className={`transition-colors ${
+      done 
+        ? 'border-green-400 bg-green-50' 
+        : 'border-gray-200 bg-white'
+    }`}>
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+              <span className={`text-xs font-semibold px-2 py-0.5 rounded ${
+                done 
+                  ? 'text-green-700 bg-green-100' 
+                  : 'text-gray-500 bg-gray-100'
+              }`}>
                 {color.id}
               </span>
-              <CardTitle className="text-base font-semibold text-gray-900">
+              <CardTitle className={`text-base font-semibold ${
+                done ? 'text-green-900' : 'text-gray-900'
+              }`}>
                 {color.label}
               </CardTitle>
             </div>
           </div>
-          <label className="flex items-center gap-2 text-sm cursor-pointer group">
-            <input
-              type="checkbox"
-              className="size-5 accent-gray-900 cursor-pointer"
-              checked={included}
-              onChange={(e) => onToggleIncluded(e.target.checked)}
-            />
-            <span className={`font-medium ${included ? 'text-gray-900' : 'text-gray-500'}`}>
-              Include
-            </span>
-          </label>
+          <Button
+            variant={done ? "default" : "outline"}
+            size="sm"
+            onClick={() => onToggleDone(!done)}
+            className={`transition-all ${
+              done
+                ? 'bg-green-600 hover:bg-green-700 text-white border-green-600'
+                : 'border-gray-300'
+            }`}
+          >
+            {done ? '✓ Done' : 'Mark Done'}
+          </Button>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
