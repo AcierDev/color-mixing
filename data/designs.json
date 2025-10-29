@@ -1,0 +1,59 @@
+[
+  {
+    "id": "coastal-dream",
+    "name": "Coastal Dream",
+    "colors": [
+      { "id": "1", "label": "Toasty Fireplace", "formula": "toasty-fireplace" },
+      {
+        "id": "2",
+        "label": "Toasty Fireplace + Cosy Chair",
+        "formula": "1 part toasty-fireplace + 1 part cosy-chair"
+      },
+      { "id": "3", "label": "Cosy Chair", "formula": "cosy-chair" },
+      {
+        "id": "4",
+        "label": "Cosy Chair + Ballroom Dancing",
+        "formula": "1 part cosy-chair + 1 part ballroom-dancing"
+      },
+      { "id": "5", "label": "Ballroom Dancing", "formula": "ballroom-dancing" },
+      {
+        "id": "6",
+        "label": "2 part Ballroom Dancing + 1 part Academy Gray",
+        "formula": "2 part ballroom-dancing + 1 part academy-gray"
+      },
+      {
+        "id": "7",
+        "label": "5 part Academy Gray, 3 part Ballroom Dancing",
+        "formula": "5 part academy-gray + 3 part ballroom-dancing"
+      },
+      { "id": "8", "label": "Academy Gray", "formula": "academy-gray" },
+      {
+        "id": "10",
+        "label": "3 part Academy gray + 5 part Peaceful Slumber",
+        "formula": "3 part academy-gray + 5 part peaceful-slumber"
+      },
+      {
+        "id": "11",
+        "label": "Peaceful Slumber",
+        "formula": "peaceful-slumber"
+      },
+      {
+        "id": "12",
+        "label": "5 part Peaceful Slumber, 3 part Midnight Bayou",
+        "formula": "5 part peaceful-slumber + 3 part midnight-bayou"
+      },
+      {
+        "id": "13",
+        "label": "5 part Midnight Bayou + 3 part Peaceful Slumber",
+        "formula": "5 part midnight-bayou + 3 part peaceful-slumber"
+      },
+      { "id": "14", "label": "Midnight Bayou", "formula": "midnight-bayou" },
+      {
+        "id": "15",
+        "label": "Indigo Streamer + Midnight Bayou",
+        "formula": "1 part indigo-streamer + 1 part midnight-bayou"
+      },
+      { "id": "16", "label": "Indigo Streamer", "formula": "indigo-streamer" }
+    ]
+  }
+]
