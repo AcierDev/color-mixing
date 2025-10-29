@@ -10,20 +10,32 @@ type Design = {
 export default async function Home() {
   const { designs } = await readAppData();
   return (
-    <main className="mx-auto max-w-md p-4 pb-24">
-      <h1 className="text-2xl font-semibold mb-4">Select a design</h1>
-      <ul className="space-y-2">
+    <main className="mx-auto max-w-2xl p-6 pb-24">
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+          Color Mixing Calculator
+        </h1>
+        <p className="text-gray-600 text-sm">
+          Professional paint and pigment mixing tool
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {designs.map((d: Design) => (
-          <li key={d.id}>
-            <Link
-              href={`/design/${d.id}`}
-              className="block rounded-lg border border-zinc-200 px-4 py-3 active:scale-[0.99]"
-            >
+          <Link
+            key={d.id}
+            href={`/design/${d.id}`}
+            className="group block rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-sm transition-all hover:border-gray-300 hover:shadow-md active:scale-[0.98]"
+          >
+            <div className="font-semibold text-gray-900 group-hover:text-black transition-colors">
               {d.name}
-            </Link>
-          </li>
+            </div>
+            <div className="text-xs text-gray-500 mt-1">
+              {d.colors.length} colors
+            </div>
+          </Link>
         ))}
-      </ul>
+      </div>
     </main>
   );
 }

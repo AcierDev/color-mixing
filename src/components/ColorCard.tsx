@@ -38,28 +38,40 @@ export default function ColorCard({ color, baseColors, grams, included, onChange
   };
 
   return (
-    <Card className="border-zinc-200">
-      <CardHeader className="py-3">
-        <div className="flex items-center justify-between gap-3">
-          <CardTitle className="text-base font-medium">{color.id}. {color.label}</CardTitle>
-          <label className="flex items-center gap-2 text-sm">
+    <Card className={`border-gray-200 ${included ? 'bg-white' : 'bg-gray-50'} transition-colors`}>
+      <CardHeader className="pb-4">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                {color.id}
+              </span>
+              <CardTitle className="text-base font-semibold text-gray-900">
+                {color.label}
+              </CardTitle>
+            </div>
+          </div>
+          <label className="flex items-center gap-2 text-sm cursor-pointer group">
             <input
               type="checkbox"
-              className="size-5 accent-black"
+              className="size-5 accent-gray-900 cursor-pointer"
               checked={included}
               onChange={(e) => onToggleIncluded(e.target.checked)}
             />
-            Include
+            <span className={`font-medium ${included ? 'text-gray-900' : 'text-gray-500'}`}>
+              Include
+            </span>
           </label>
         </div>
       </CardHeader>
-      <CardContent className="pt-0">
+      <CardContent className="space-y-4">
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={() => handleAdjustGrams(-50)}
             disabled={grams === 0}
+            className="border-gray-300"
           >
             -50
           </Button>
@@ -71,27 +83,33 @@ export default function ColorCard({ color, baseColors, grams, included, onChange
             step={1}
             value={grams}
             onChange={(e) => onChangeGrams(Math.max(0, Math.min(100000, Number(e.target.value || 0))))}
-            className="h-10 w-28"
+            className="h-10 w-32 text-center font-medium"
           />
           <Button
             variant="outline"
             size="sm"
             onClick={() => handleAdjustGrams(50)}
             disabled={grams >= 100000}
+            className="border-gray-300"
           >
             +50
           </Button>
-          <span className="text-sm text-zinc-600">grams</span>
+          <span className="text-sm text-gray-500 ml-1">grams</span>
         </div>
 
         {nonZeroBaseColors.length > 0 && (
-          <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-            {nonZeroBaseColors.map((b) => (
-              <div key={b.id} className="flex items-center justify-between">
-                <span className="text-zinc-600">{b.name}</span>
-                <span className="font-medium">{formatGrams(breakdown[b.id] ?? 0)}</span>
-              </div>
-            ))}
+          <div className="rounded-lg bg-gray-50 border border-gray-200 p-3">
+            <div className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+              Base Colors
+            </div>
+            <div className="grid grid-cols-1 gap-1.5">
+              {nonZeroBaseColors.map((b) => (
+                <div key={b.id} className="flex items-center justify-between text-sm py-1">
+                  <span className="text-gray-700">{b.name}</span>
+                  <span className="font-semibold text-gray-900">{formatGrams(breakdown[b.id] ?? 0)}</span>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </CardContent>

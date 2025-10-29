@@ -93,30 +93,44 @@ export default function DesignMixView({ baseColors, design }: Props) {
   });
 
   return (
-    <main className="mx-auto max-w-md p-4 pb-8">
-      <header className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/80 px-4 py-3 backdrop-blur">
-        <Link href="/" className="inline-block mb-2">
-          <Button variant="outline" size="sm">
+    <main className="mx-auto max-w-3xl p-6 pb-8">
+      <header className="sticky top-0 z-10 -mx-6 mb-6 border-b border-gray-200 bg-white/90 px-6 py-4 backdrop-blur-sm">
+        <Link href="/" className="inline-block mb-3">
+          <Button variant="outline" size="sm" className="border-gray-300">
             ← Back to Designs
           </Button>
         </Link>
-        <h1 className="text-xl font-semibold">{design.name}</h1>
-        <div className="mt-3 flex items-center gap-3">
-          <Input
-            type="number"
-            inputMode="numeric"
-            min={0}
-            max={100000}
-            step={1}
-            value={overallGrams}
-            onChange={(e) => handleOverallGramsChange(Math.max(0, Math.min(100000, Number(e.target.value || 0))))}
-            className="h-10 w-28"
-          />
-          <span className="text-sm text-zinc-600">grams (all colors)</span>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-1">{design.name}</h1>
+            <p className="text-sm text-gray-600">
+              {design.colors.length} total colors • {visibleColors.length} active
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="flex-1">
+            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-1">
+              Bulk Adjust All Colors
+            </label>
+            <div className="flex items-center gap-2">
+              <Input
+                type="number"
+                inputMode="numeric"
+                min={0}
+                max={100000}
+                step={1}
+                value={overallGrams}
+                onChange={(e) => handleOverallGramsChange(Math.max(0, Math.min(100000, Number(e.target.value || 0))))}
+                className="h-10 w-36 text-center font-medium"
+              />
+              <span className="text-sm text-gray-600">grams</span>
+            </div>
+          </div>
         </div>
       </header>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         {visibleColors.map((c: DesignColor) => (
           <ColorCard
             key={c.id}

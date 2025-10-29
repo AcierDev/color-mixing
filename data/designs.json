@@ -86,22 +86,7 @@
         "label": "Indigo Streamer + Midnight Bayou",
         "formula": "1 part indigo-streamer + 1 part midnight-bayou"
       },
-      { "id": "11", "label": "Indigo Streamer", "formula": "indigo-streamer" },
-      { "id": "12", "label": "Aloe", "formula": "aloe" },
-      { "id": "13", "label": "Isle of Pines", "formula": "isle-of-pines" },
-      { "id": "14", "label": "Kale Green", "formula": "kale-green" },
-      { "id": "15", "label": "Jadite", "formula": "jadite" },
-      { "id": "16", "label": "Parisian Patina", "formula": "parisian-patina" },
-      { "id": "17", "label": "Restful", "formula": "restful" },
-      { "id": "18", "label": "Kind Green", "formula": "kind-green" },
-      { "id": "19", "label": "Slow Green", "formula": "slow-green" },
-      { "id": "20", "label": "Timberline", "formula": "timberline" },
-      { "id": "21", "label": "French Roast", "formula": "french-roast" },
-      { "id": "22", "label": "Brevity Brown", "formula": "brevity-brown" },
-      { "id": "23", "label": "Mocha", "formula": "mocha" },
-      { "id": "24", "label": "Sand Trap", "formula": "sand-trap" },
-      { "id": "25", "label": "Bona Fide Beige", "formula": "bona-fide-beige" },
-      { "id": "26", "label": "Reticence", "formula": "reticence" }
+      { "id": "11", "label": "Indigo Streamer", "formula": "indigo-streamer" }
     ]
   },
   {
@@ -163,21 +148,13 @@
     "id": "aloe",
     "name": "Aloe",
     "colors": [
-      { "id": "1", "label": "Aloe", "formula": "aloe" },
-      { "id": "2", "label": "Isle of Pines", "formula": "isle-of-pines" },
-      { "id": "3", "label": "Kale Green", "formula": "kale-green" },
-      { "id": "4", "label": "Jadite", "formula": "jadite" },
-      { "id": "5", "label": "Parisian Patina", "formula": "parisian-patina" },
-      { "id": "6", "label": "Restful", "formula": "restful" },
-      { "id": "7", "label": "Kind Green", "formula": "kind-green" },
-      { "id": "8", "label": "Slow Green", "formula": "slow-green" },
-      { "id": "9", "label": "Timberline", "formula": "timberline" },
-      { "id": "10", "label": "French Roast", "formula": "french-roast" },
-      { "id": "11", "label": "Brevity Brown", "formula": "brevity-brown" },
-      { "id": "12", "label": "Mocha", "formula": "mocha" },
-      { "id": "13", "label": "Sand Trap", "formula": "sand-trap" },
-      { "id": "14", "label": "Bona Fide Beige", "formula": "bona-fide-beige" },
-      { "id": "15", "label": "Reticence", "formula": "reticence" }
+      { "id": "1", "label": "Isle of Pines", "formula": "isle-of-pines" },
+      { "id": "2", "label": "Kale Green", "formula": "kale-green" },
+      { "id": "3", "label": "Jadite", "formula": "jadite" },
+      { "id": "4", "label": "Parisian Patina", "formula": "parisian-patina" },
+      { "id": "5", "label": "Restful", "formula": "restful" },
+      { "id": "6", "label": "Kind Green", "formula": "kind-green" },
+      { "id": "7", "label": "Slow Green", "formula": "slow-green" }
     ]
   },
   {
@@ -214,9 +191,21 @@
         "formula": "1 part number-five + 1 part network-gray"
       },
       { "id": "10", "label": "Network Grey", "formula": "network-gray" },
-      { "id": "11", "label": "Number 10 from amber piece (60 Grey: 85 White)", "formula": "60 part grey + 85 part white" },
-      { "id": "12", "label": "Number 11 from amber piece (47 Grey: 200 White)", "formula": "47 part grey + 200 part white" },
-      { "id": "13", "label": "Number 12 from amber piece (30 grey: 345 White)", "formula": "30 part grey + 345 part white" },
+      {
+        "id": "11",
+        "label": "Number 10 from amber piece (60 Grey: 85 White)",
+        "formula": "60 part grey + 85 part white"
+      },
+      {
+        "id": "12",
+        "label": "Number 11 from amber piece (47 Grey: 200 White)",
+        "formula": "47 part grey + 200 part white"
+      },
+      {
+        "id": "13",
+        "label": "Number 12 from amber piece (30 grey: 345 White)",
+        "formula": "30 part grey + 345 part white"
+      },
       { "id": "14", "label": "White", "formula": "white" }
     ]
   },
@@ -312,7 +301,191 @@
       { "id": "10", "label": "Brave Purple", "formula": "brave-purple" },
       { "id": "11", "label": "Forgot-Me-Not", "formula": "forgot-me-not" }
     ]
+  },
+  {
+    "id": "elemental",
+    "name": "Elemental",
+    "colors": [
+      { "id": "1", "label": "Cyberspace", "formula": "cyberspace" },
+      {
+        "id": "2",
+        "label": "2 Cyberspace : 1 Network Gray",
+        "formula": "2 part cyberspace + 1 part network-gray"
+      },
+      {
+        "id": "3",
+        "label": "1 Cyberspace : 2 Network Gray",
+        "formula": "1 part cyberspace + 2 part network-gray"
+      },
+      { "id": "4", "label": "Network Gray", "formula": "network-gray" },
+      {
+        "id": "5",
+        "label": "2 Network Gray : 1 Ivoire",
+        "formula": "2 part network-gray + 1 part ivoire"
+      },
+      {
+        "id": "6",
+        "label": "1 Network Gray : 2 Ivoire",
+        "formula": "1 part network-gray + 2 part ivoire"
+      },
+      { "id": "7", "label": "Ivoire", "formula": "ivoire" },
+      { "id": "8", "label": "Blonde", "formula": "blonde" },
+      { "id": "9", "label": "Restrained Gold", "formula": "restrained-gold" },
+      { "id": "10", "label": "Mannered Gold", "formula": "mannered-gold" }
+    ]
+  },
+  {
+    "id": "carbon",
+    "name": "Carbon",
+    "colors": [
+      {
+        "id": "1",
+        "label": "Black : White (10 : 290)",
+        "formula": "10 part black + 290 part white"
+      },
+      {
+        "id": "2",
+        "label": "Black : White (20 : 290)",
+        "formula": "20 part black + 290 part white"
+      },
+      {
+        "id": "3",
+        "label": "Black : White (42.86 : 257.14)",
+        "formula": "42.86 part black + 257.14 part white"
+      },
+      {
+        "id": "4",
+        "label": "Black : White (85.71 : 214.29)",
+        "formula": "85.71 part black + 214.29 part white"
+      },
+      {
+        "id": "5",
+        "label": "Black : White (128.57 : 171.43)",
+        "formula": "128.57 part black + 171.43 part white"
+      },
+      {
+        "id": "6",
+        "label": "Black : White (171.43 : 128.57)",
+        "formula": "171.43 part black + 128.57 part white"
+      },
+      {
+        "id": "7",
+        "label": "Black : White (214.29 : 85.71)",
+        "formula": "214.29 part black + 85.71 part white"
+      },
+      {
+        "id": "8",
+        "label": "Black : White (257.14 : 42.86)",
+        "formula": "257.14 part black + 42.86 part white"
+      },
+      {
+        "id": "9",
+        "label": "Black : White (300 : 0)",
+        "formula": "300 part black + 0 part white"
+      }
+    ]
+  },
+  {
+    "id": "brisket",
+    "name": "Brisket",
+    "colors": [
+      { "id": "1", "label": "Secluded Beach", "formula": "secluded-beach" },
+      {
+        "id": "2",
+        "label": "2 Secluded Beach : 1 Sweet Caramel",
+        "formula": "2 part secluded-beach + 1 part sweet-caramel"
+      },
+      { "id": "3", "label": "Sweet Caramel", "formula": "sweet-caramel" },
+      {
+        "id": "4",
+        "label": "1 Sweet Caramel : 1 Pinata",
+        "formula": "1 part sweet-caramel + 1 part pinata"
+      },
+      { "id": "5", "label": "Pinata", "formula": "pinata" },
+      {
+        "id": "6",
+        "label": "1 Pinata : Vintage Plum",
+        "formula": "1 part pinata + 1 part vintage-plum"
+      },
+      { "id": "7", "label": "Vintage Plum", "formula": "vintage-plum" },
+      {
+        "id": "8",
+        "label": "1 Vintage Plum : 1 Alley Cat",
+        "formula": "1 part vintage-plum + 1 part alley-cat"
+      },
+      { "id": "9", "label": "Alley Cat", "formula": "alley-cat" },
+      {
+        "id": "10",
+        "label": "2 Alley Cat : 1 Indigo Streamer",
+        "formula": "2 part alley-cat + 1 part indigo-streamer"
+      },
+      {
+        "id": "11",
+        "label": "1 Alley Cat : 2 Indigo Streamer",
+        "formula": "1 part alley-cat + 2 part indigo-streamer"
+      },
+      { "id": "12", "label": "Indigo Streamer", "formula": "indigo-streamer" }
+    ]
+  },
+  {
+    "id": "amethyst",
+    "name": "Amethyst",
+    "colors": [
+      { "id": "1", "label": "Aquarium Blue", "formula": "aquarium-blue" },
+      { "id": "2", "label": "Ocean Breeze", "formula": "ocean-breeze" },
+      { "id": "3", "label": "Deep Ocean", "formula": "deep-ocean" },
+      { "id": "4", "label": "Cool Blue", "formula": "cool-blue" },
+      { "id": "5", "label": "Twilight Blue", "formula": "twilight-blue" },
+      { "id": "6", "label": "Blue Lapis", "formula": "blue-lapis" },
+      { "id": "7", "label": "Grape Gum", "formula": "grape-gum" },
+      {
+        "id": "8",
+        "label": "Scandinavian Blue",
+        "formula": "scandinavian-blue"
+      }
+    ]
+  },
+  {
+    "id": "sapphire",
+    "name": "Sapphire",
+    "colors": [
+      { "id": "1", "label": "Dancing Green", "formula": "dancing-green" },
+      {
+        "id": "2",
+        "label": "0.5 Dignity Blue : 6.5 Dancing Green",
+        "formula": "0.5 part dignity-blue + 6.5 part dancing-green"
+      },
+      {
+        "id": "3",
+        "label": "1 Dignity Blue : 6 Dancing Green",
+        "formula": "1 part dignity-blue + 6 part dancing-green"
+      },
+      {
+        "id": "4",
+        "label": "2 Dignity Blue : 5 Dancing Green",
+        "formula": "2 part dignity-blue + 5 part dancing-green"
+      },
+      {
+        "id": "5",
+        "label": "3 Dignity Blue : 4 Dancing Green",
+        "formula": "3 part dignity-blue + 4 part dancing-green"
+      },
+      {
+        "id": "6",
+        "label": "4 Dignity Blue : 3 Dancing Green",
+        "formula": "4 part dignity-blue + 3 part dancing-green"
+      },
+      {
+        "id": "7",
+        "label": "5 Dignity Blue : 2 Dancing Green",
+        "formula": "5 part dignity-blue + 2 part dancing-green"
+      },
+      {
+        "id": "8",
+        "label": "6 Dignity Blue : 1 Dancing Green",
+        "formula": "6 part dignity-blue + 1 part dancing-green"
+      },
+      { "id": "9", "label": "Dignity Blue", "formula": "dignity-blue" }
+    ]
   }
 ]
-
-

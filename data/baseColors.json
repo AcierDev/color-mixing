@@ -60,7 +60,27 @@
   { "id": "wisteria", "name": "Wisteria" },
   { "id": "forever-lilac", "name": "Forever Lilac" },
   { "id": "brave-purple", "name": "Brave Purple" },
-  { "id": "forgot-me-not", "name": "Forgot-Me-Not" }
+  { "id": "forgot-me-not", "name": "Forgot-Me-Not" },
+  { "id": "cyberspace", "name": "Cyberspace" },
+  { "id": "ivoire", "name": "Ivoire" },
+  { "id": "blonde", "name": "Blonde" },
+  { "id": "restrained-gold", "name": "Restrained Gold" },
+  { "id": "mannered-gold", "name": "Mannered Gold" },
+  { "id": "secluded-beach", "name": "Secluded Beach" },
+  { "id": "sweet-caramel", "name": "Sweet Caramel" },
+  { "id": "pinata", "name": "Pinata" },
+  { "id": "vintage-plum", "name": "Vintage Plum" },
+  { "id": "alley-cat", "name": "Alley Cat" },
+  { "id": "aquarium-blue", "name": "Aquarium Blue" },
+  { "id": "ocean-breeze", "name": "Ocean Breeze" },
+  { "id": "deep-ocean", "name": "Deep Ocean" },
+  { "id": "cool-blue", "name": "Cool Blue" },
+  { "id": "twilight-blue", "name": "Twilight Blue" },
+  { "id": "blue-lapis", "name": "Blue Lapis" },
+  { "id": "grape-gum", "name": "Grape Gum" },
+  { "id": "scandinavian-blue", "name": "Scandinavian Blue" },
+  { "id": "dignity-blue", "name": "Dignity Blue" },
+  { "id": "dancing-green", "name": "Dancing Green" }
 ]
 
 
