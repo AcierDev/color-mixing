@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { readAppData } from "@/lib/data";
 
+type Design = {
+  id: string;
+  name: string;
+  colors: any[];
+};
+
 export default async function Home() {
   const { designs } = await readAppData();
   return (
     <main className="mx-auto max-w-md p-4 pb-24">
       <h1 className="text-2xl font-semibold mb-4">Select a design</h1>
       <ul className="space-y-2">
-        {designs.map((d) => (
+        {designs.map((d: Design) => (
           <li key={d.id}>
             <Link
               href={`/design/${d.id}`}

@@ -1,6 +1,27 @@
 import { promises as fs } from "fs";
 import path from "path";
-import type { AppData, BaseColor, Design } from "@/types";
+
+type BaseColor = {
+  id: string;
+  name: string;
+};
+
+type DesignColor = {
+  id: string;
+  label: string;
+  formula: string;
+};
+
+type Design = {
+  id: string;
+  name: string;
+  colors: DesignColor[];
+};
+
+type AppData = {
+  baseColors: BaseColor[];
+  designs: Design[];
+};
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, "data");
@@ -24,4 +45,6 @@ export async function readAppData(): Promise<AppData> {
   ]);
   return { baseColors, designs };
 }
+
+
 

@@ -1,11 +1,30 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { BaseColor, Design } from "@/types";
+import Link from "next/link";
+
+type BaseColor = {
+  id: string;
+  name: string;
+};
+
+type DesignColor = {
+  id: string;
+  label: string;
+  formula: string;
+};
+
+type Design = {
+  id: string;
+  name: string;
+  colors: DesignColor[];
+};
 import { parseFormula } from "@/lib/formula";
-import { aggregateTotals, computeBreakdown, formatGrams } from "@/lib/compute";
+import { computeBreakdown } from "@/lib/compute";
 import ColorCard from "@/components/ColorCard";
 import { loadJSON, saveJSON } from "@/lib/storage";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   baseColors: BaseColor[];
@@ -17,12 +36,12 @@ export default function DesignMixView({ baseColors, design }: Props) {
 
   const [targets, setTargets] = useState<Record<string, number>>(() => {
     const initial: Record<string, number> = {};
-    for (const c of design.colors) initial[c.id] = 600;
+    for (const c of design.colors) { initial[c.id] = 600; }
     return initial;
   });
   const [included, setIncluded] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
-    for (const c of design.colors) initial[c.id] = true;
+    for (const c of design.colors) { initial[c.id] = true; }
     return initial;
   });
 
@@ -49,25 +68,56 @@ export default function DesignMixView({ baseColors, design }: Props) {
     saveJSON(`included:${design.id}`, included);
   }, [design.id, included]);
 
-  const perColorBreakdowns = useMemo(() => {
-    return design.colors.map((c) => {
-      const ratios = parseFormula(c.formula, baseIds);
-      const grams = included[c.id] ? targets[c.id] ?? 0 : 0;
-      return computeBreakdown(grams, ratios);
-    });
-  }, [design.colors, baseIds, targets, included]);
+  const overallGrams = useMemo(() => {
+    const includedGrams = design.colors
+      .filter((c: DesignColor) => included[c.id])
+      .map((c: DesignColor) => targets[c.id] ?? 0);
+    if (includedGrams.length === 0) return 600;
+    const avg = includedGrams.reduce((a: number, b: number) => a + b, 0) / includedGrams.length;
+    return Math.round(avg);
+  }, [design.colors, targets, included]);
 
-  const totals = useMemo(() => aggregateTotals(perColorBreakdowns), [perColorBreakdowns]);
+  const handleOverallGramsChange = (grams: number) => {
+    const newTargets = { ...targets };
+    design.colors.forEach((c: DesignColor) => {
+      if (included[c.id]) {
+        newTargets[c.id] = grams;
+      }
+    });
+    setTargets(newTargets);
+  };
+
+  const visibleColors = design.colors.filter((c: DesignColor) => {
+    const grams = included[c.id] ? targets[c.id] ?? 0 : 0;
+    return grams > 0;
+  });
 
   return (
-    <main className="mx-auto max-w-md p-4 pb-28">
+    <main className="mx-auto max-w-md p-4 pb-8">
       <header className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/80 px-4 py-3 backdrop-blur">
+        <Link href="/" className="inline-block mb-2">
+          <Button variant="outline" size="sm">
+            ← Back to Designs
+          </Button>
+        </Link>
         <h1 className="text-xl font-semibold">{design.name}</h1>
-        <p className="text-sm text-zinc-600">Tap a color to set grams (default 600g)</p>
+        <div className="mt-3 flex items-center gap-3">
+          <Input
+            type="number"
+            inputMode="numeric"
+            min={0}
+            max={100000}
+            step={1}
+            value={overallGrams}
+            onChange={(e) => handleOverallGramsChange(Math.max(0, Math.min(100000, Number(e.target.value || 0))))}
+            className="h-10 w-28"
+          />
+          <span className="text-sm text-zinc-600">grams (all colors)</span>
+        </div>
       </header>
 
       <div className="space-y-3">
-        {design.colors.map((c) => (
+        {visibleColors.map((c: DesignColor) => (
           <ColorCard
             key={c.id}
             color={c}
@@ -79,48 +129,6 @@ export default function DesignMixView({ baseColors, design }: Props) {
           />
         ))}
       </div>
-
-      <footer className="fixed bottom-0 left-0 right-0 mx-auto max-w-md border-t border-zinc-200 bg-white px-4 py-3">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-sm font-medium">Overall totals</span>
-          <div className="flex items-center gap-2">
-            <button
-              className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm active:scale-[0.99]"
-              onClick={() => {
-                const lines = baseColors.map((b) => `${b.name}: ${formatGrams(totals[b.id] ?? 0)}`);
-                const text = `${design.name} totals\n` + lines.join("\n");
-                void navigator.clipboard.writeText(text);
-              }}
-            >
-              Copy
-            </button>
-            <button
-              className="rounded-md bg-black px-3 py-1.5 text-sm text-white active:scale-[0.99]"
-              onClick={async () => {
-                const lines = baseColors.map((b) => `${b.name}: ${formatGrams(totals[b.id] ?? 0)}`);
-                const text = `${design.name} totals\n` + lines.join("\n");
-                if ((navigator as any).share) {
-                  try {
-                    await (navigator as any).share({ text, title: design.name });
-                  } catch {}
-                } else {
-                  void navigator.clipboard.writeText(text);
-                }
-              }}
-            >
-              Share
-            </button>
-          </div>
-        </div>
-        <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-          {baseColors.map((b) => (
-            <div key={b.id} className="flex items-center justify-between">
-              <span className="text-zinc-600">{b.name}</span>
-              <span className="font-medium">{formatGrams(totals[b.id] ?? 0)}</span>
-            </div>
-          ))}
-        </div>
-      </footer>
     </main>
   );
 }

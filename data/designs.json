@@ -55,5 +55,264 @@
       },
       { "id": "16", "label": "Indigo Streamer", "formula": "indigo-streamer" }
     ]
+  },
+  {
+    "id": "tidal",
+    "name": "Tidal",
+    "colors": [
+      { "id": "1", "label": "Gray Screen", "formula": "gray-screen" },
+      { "id": "2", "label": "Network Gray", "formula": "network-gray" },
+      { "id": "3", "label": "Software", "formula": "software" },
+      { "id": "4", "label": "Academy Gray", "formula": "academy-gray" },
+      {
+        "id": "5",
+        "label": "3 part Academy gray + 5 part Peaceful Slumber",
+        "formula": "3 part academy-gray + 5 part peaceful-slumber"
+      },
+      { "id": "6", "label": "Peaceful Slumber", "formula": "peaceful-slumber" },
+      {
+        "id": "7",
+        "label": "5 part Peaceful Slumber, 3 part Midnight Bayou",
+        "formula": "5 part peaceful-slumber + 3 part midnight-bayou"
+      },
+      {
+        "id": "8",
+        "label": "5 part Midnight Bayou + 3 part Peaceful Slumber",
+        "formula": "5 part midnight-bayou + 3 part peaceful-slumber"
+      },
+      { "id": "9", "label": "Midnight Bayou", "formula": "midnight-bayou" },
+      {
+        "id": "10",
+        "label": "Indigo Streamer + Midnight Bayou",
+        "formula": "1 part indigo-streamer + 1 part midnight-bayou"
+      },
+      { "id": "11", "label": "Indigo Streamer", "formula": "indigo-streamer" },
+      { "id": "12", "label": "Aloe", "formula": "aloe" },
+      { "id": "13", "label": "Isle of Pines", "formula": "isle-of-pines" },
+      { "id": "14", "label": "Kale Green", "formula": "kale-green" },
+      { "id": "15", "label": "Jadite", "formula": "jadite" },
+      { "id": "16", "label": "Parisian Patina", "formula": "parisian-patina" },
+      { "id": "17", "label": "Restful", "formula": "restful" },
+      { "id": "18", "label": "Kind Green", "formula": "kind-green" },
+      { "id": "19", "label": "Slow Green", "formula": "slow-green" },
+      { "id": "20", "label": "Timberline", "formula": "timberline" },
+      { "id": "21", "label": "French Roast", "formula": "french-roast" },
+      { "id": "22", "label": "Brevity Brown", "formula": "brevity-brown" },
+      { "id": "23", "label": "Mocha", "formula": "mocha" },
+      { "id": "24", "label": "Sand Trap", "formula": "sand-trap" },
+      { "id": "25", "label": "Bona Fide Beige", "formula": "bona-fide-beige" },
+      { "id": "26", "label": "Reticence", "formula": "reticence" }
+    ]
+  },
+  {
+    "id": "amber",
+    "name": "Amber",
+    "colors": [
+      { "id": "1", "label": "French Roast", "formula": "french-roast" },
+      {
+        "id": "2",
+        "label": "94 French Roast : 33 Reynard",
+        "formula": "94 part french-roast + 33 part reynard"
+      },
+      {
+        "id": "3",
+        "label": "1 French Roast : 1 Reynard",
+        "formula": "1 part french-roast + 1 part reynard"
+      },
+      {
+        "id": "4",
+        "label": "82 Reynard : 31 French Roast",
+        "formula": "82 part reynard + 31 part french-roast"
+      },
+      { "id": "5", "label": "Reynard", "formula": "reynard" },
+      {
+        "id": "6",
+        "label": "75 Reynard : 31 Network Grey",
+        "formula": "75 part reynard + 31 part network-gray"
+      },
+      {
+        "id": "7",
+        "label": "45 Reynard : 59 Network Grey",
+        "formula": "45 part reynard + 59 part network-gray"
+      },
+      {
+        "id": "8",
+        "label": "32 Reynard : 84 Grey",
+        "formula": "32 part reynard + 84 part grey"
+      },
+      { "id": "9", "label": "Network Grey", "formula": "network-gray" },
+      {
+        "id": "10",
+        "label": "60 Grey: 85 White",
+        "formula": "60 part grey + 85 part white"
+      },
+      {
+        "id": "11",
+        "label": "47 Grey: 200 White",
+        "formula": "47 part grey + 200 part white"
+      },
+      {
+        "id": "12",
+        "label": "30 grey: 345 White",
+        "formula": "30 part grey + 345 part white"
+      },
+      { "id": "13", "label": "White", "formula": "white" }
+    ]
+  },
+  {
+    "id": "aloe",
+    "name": "Aloe",
+    "colors": [
+      { "id": "1", "label": "Aloe", "formula": "aloe" },
+      { "id": "2", "label": "Isle of Pines", "formula": "isle-of-pines" },
+      { "id": "3", "label": "Kale Green", "formula": "kale-green" },
+      { "id": "4", "label": "Jadite", "formula": "jadite" },
+      { "id": "5", "label": "Parisian Patina", "formula": "parisian-patina" },
+      { "id": "6", "label": "Restful", "formula": "restful" },
+      { "id": "7", "label": "Kind Green", "formula": "kind-green" },
+      { "id": "8", "label": "Slow Green", "formula": "slow-green" },
+      { "id": "9", "label": "Timberline", "formula": "timberline" },
+      { "id": "10", "label": "French Roast", "formula": "french-roast" },
+      { "id": "11", "label": "Brevity Brown", "formula": "brevity-brown" },
+      { "id": "12", "label": "Mocha", "formula": "mocha" },
+      { "id": "13", "label": "Sand Trap", "formula": "sand-trap" },
+      { "id": "14", "label": "Bona Fide Beige", "formula": "bona-fide-beige" },
+      { "id": "15", "label": "Reticence", "formula": "reticence" }
+    ]
+  },
+  {
+    "id": "forest",
+    "name": "Forest",
+    "colors": [
+      { "id": "1", "label": "Black", "formula": "black" },
+      {
+        "id": "2",
+        "label": "1 black : 1 french roast",
+        "formula": "1 part black + 1 part french-roast"
+      },
+      { "id": "3", "label": "French roast", "formula": "french-roast" },
+      {
+        "id": "4",
+        "label": "2 French Roast : 1 Forestwood",
+        "formula": "2 part french-roast + 1 part forestwood"
+      },
+      {
+        "id": "5",
+        "label": "1 French Roast : 2 Forestwood",
+        "formula": "1 part french-roast + 2 part forestwood"
+      },
+      { "id": "6", "label": "Forestwood", "formula": "forestwood" },
+      {
+        "id": "7",
+        "label": "1 Forestwood : 1 Number Five",
+        "formula": "1 part forestwood + 1 part number-five"
+      },
+      { "id": "8", "label": "Number Five", "formula": "number-five" },
+      {
+        "id": "9",
+        "label": "1 Number Five : 1 Network Grey",
+        "formula": "1 part number-five + 1 part network-gray"
+      },
+      { "id": "10", "label": "Network Grey", "formula": "network-gray" },
+      { "id": "11", "label": "Number 10 from amber piece (60 Grey: 85 White)", "formula": "60 part grey + 85 part white" },
+      { "id": "12", "label": "Number 11 from amber piece (47 Grey: 200 White)", "formula": "47 part grey + 200 part white" },
+      { "id": "13", "label": "Number 12 from amber piece (30 grey: 345 White)", "formula": "30 part grey + 345 part white" },
+      { "id": "14", "label": "White", "formula": "white" }
+    ]
+  },
+  {
+    "id": "abyss",
+    "name": "Abyss",
+    "colors": [
+      { "id": "1", "label": "Viejo White", "formula": "viejo-white" },
+      { "id": "2", "label": "China Doll", "formula": "china-doll" },
+      {
+        "id": "3",
+        "label": "2 China Doll : 1 Coastal #11 (Peaceful Slumber)",
+        "formula": "2 part china-doll + 1 part peaceful-slumber"
+      },
+      {
+        "id": "4",
+        "label": "1 China Doll : 1 Coastal #11",
+        "formula": "1 part china-doll + 1 part peaceful-slumber"
+      },
+      {
+        "id": "5",
+        "label": "1 China Doll : 2 Coastal #11",
+        "formula": "1 part china-doll + 2 part peaceful-slumber"
+      },
+      { "id": "6", "label": "Coastal #11", "formula": "peaceful-slumber" },
+      {
+        "id": "7",
+        "label": "2 Coastal #11 : 1 Coastal #16 (Indigo Streamer)",
+        "formula": "2 part peaceful-slumber + 1 part indigo-streamer"
+      },
+      {
+        "id": "8",
+        "label": "1 Coastal #11 : 1 Coastal #16",
+        "formula": "1 part peaceful-slumber + 1 part indigo-streamer"
+      },
+      {
+        "id": "9",
+        "label": "1 Coastal #11 : 2 Coastal #16",
+        "formula": "1 part peaceful-slumber + 2 part indigo-streamer"
+      },
+      { "id": "10", "label": "Coastal #16", "formula": "indigo-streamer" }
+    ]
+  },
+  {
+    "id": "autumn",
+    "name": "Autumn",
+    "colors": [
+      { "id": "1", "label": "Osage Orange", "formula": "osage-orange" },
+      { "id": "2", "label": "Navel", "formula": "navel" },
+      { "id": "3", "label": "Knockout Orange", "formula": "knockout-orange" },
+      { "id": "4", "label": "Stop", "formula": "stop" }
+    ]
+  },
+  {
+    "id": "winter",
+    "name": "Winter",
+    "colors": [
+      { "id": "1", "label": "Minor Blue", "formula": "minor-blue" },
+      { "id": "2", "label": "Sky Fall", "formula": "sky-fall" },
+      { "id": "3", "label": "Major Blue", "formula": "major-blue" },
+      { "id": "4", "label": "Blue Plate", "formula": "blue-plate" },
+      { "id": "5", "label": "Jay Blue", "formula": "jay-blue" }
+    ]
+  },
+  {
+    "id": "mirage",
+    "name": "Mirage",
+    "colors": [
+      { "id": "1", "label": "Smoky Azurite", "formula": "smoky-azurite" },
+      { "id": "2", "label": "Poolhouse", "formula": "poolhouse" },
+      { "id": "3", "label": "Whirlpool", "formula": "whirlpool" },
+      { "id": "4", "label": "Debonaire", "formula": "debonaire" },
+      { "id": "5", "label": "Rare Gray", "formula": "rare-gray" },
+      { "id": "6", "label": "Tony Taupe", "formula": "tony-taupe" },
+      { "id": "7", "label": "Stone Lion", "formula": "stone-lion" },
+      { "id": "8", "label": "Sanderling", "formula": "sanderling" },
+      { "id": "9", "label": "Dry Dock", "formula": "dry-dock" }
+    ]
+  },
+  {
+    "id": "spectrum",
+    "name": "Spectrum",
+    "colors": [
+      { "id": "1", "label": "Blue Nile", "formula": "blue-nile" },
+      { "id": "2", "label": "Briny", "formula": "briny" },
+      { "id": "3", "label": "Freshwater", "formula": "freshwater" },
+      { "id": "4", "label": "Rapture Blue", "formula": "rapture-blue" },
+      { "id": "5", "label": "Cay", "formula": "cay" },
+      { "id": "6", "label": "Lazy Grey", "formula": "lazy-grey" },
+      { "id": "7", "label": "Olympus White", "formula": "olympus-white" },
+      { "id": "8", "label": "Wisteria", "formula": "wisteria" },
+      { "id": "9", "label": "Forever Lilac", "formula": "forever-lilac" },
+      { "id": "10", "label": "Brave Purple", "formula": "brave-purple" },
+      { "id": "11", "label": "Forgot-Me-Not", "formula": "forgot-me-not" }
+    ]
   }
 ]
+
+
