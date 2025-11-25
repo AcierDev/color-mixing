@@ -80,7 +80,10 @@
   { "id": "grape-gum", "name": "Grape Gum" },
   { "id": "scandinavian-blue", "name": "Scandinavian Blue" },
   { "id": "dignity-blue", "name": "Dignity Blue" },
-  { "id": "dancing-green", "name": "Dancing Green" }
+  { "id": "dancing-green", "name": "Dancing Green" },
+  { "id": "pacific-ocean-blue", "name": "Pacific Ocean Blue" },
+  { "id": "tint-of-turquoise", "name": "Tint of Turquoise" },
+  { "id": "minted-ice", "name": "Minted Ice" }
 ]
 
 

@@ -487,5 +487,34 @@
       },
       { "id": "9", "label": "Dignity Blue", "formula": "dignity-blue" }
     ]
+  },
+  {
+    "id": "mint",
+    "name": "Mint",
+    "colors": [
+      { "id": "1", "label": "Pacific Ocean Blue", "formula": "pacific-ocean-blue" },
+      {
+        "id": "2",
+        "label": "1 Pacific Ocean Blue : 1 Tint of Turquoise",
+        "formula": "1 part pacific-ocean-blue + 1 part tint-of-turquoise"
+      },
+      { "id": "3", "label": "Tint of Turquoise", "formula": "tint-of-turquoise" },
+      {
+        "id": "4",
+        "label": "3 Tint of Turquoise : 1 Minted Ice",
+        "formula": "3 part tint-of-turquoise + 1 part minted-ice"
+      },
+      {
+        "id": "5",
+        "label": "1 Tint of Turquoise : 1 Minted Ice",
+        "formula": "1 part tint-of-turquoise + 1 part minted-ice"
+      },
+      {
+        "id": "6",
+        "label": "1 Tint of Turquoise : 3 Minted Ice",
+        "formula": "1 part tint-of-turquoise + 3 part minted-ice"
+      },
+      { "id": "7", "label": "Minted Ice", "formula": "minted-ice" }
+    ]
   }
 ]
